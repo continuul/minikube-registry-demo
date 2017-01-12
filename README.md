@@ -38,13 +38,15 @@ use VirtualBox instead.
 We recommend VMWare, the flexibility and usability is second to
 none.
 
-## Security Options
+## Tutorial
+
+### Security Options
 
 There are two security options, the first uses HTPASSWD,
 and the second uses self-signed certificates. Choose from
 among these options and continue below.
 
-### Setting Up HTPASSWD Security
+#### Setting Up HTPASSWD Security
 
 The next step to get this registry up and running is to
 create our username and password. We need to create some
@@ -60,7 +62,7 @@ docker run --entrypoint htpasswd registry:2 -Bbn admin \
     "2secret" >> `pwd`/auth/htpasswd
 ```
 
-### Setting Up Self-Signed Certificates
+#### Setting Up Self-Signed Certificates
 
 Create a directory for your self-signed SSL certificate
 and private key. Then create the certificates, copying
@@ -94,11 +96,11 @@ openssl req \
     -subj "/C=US/ST=Massachusetts/L=Boston/O=Continuul LLC/CN=continuul.io"
 ```
 
-### Setting Up Paid Certificates
+#### Setting Up Paid Certificates
 
 This is left as a highly recommended todo for the reader.
 
-### Create a Storage Directory for the Registry
+#### Create a Storage Directory for the Registry
 
 We need to create local storage for the registry images:
 
@@ -106,7 +108,7 @@ We need to create local storage for the registry images:
 mkdir -p `pwd`/data
 ```
 
-### Run the Docker Registry
+#### Run the Docker Registry
 
 To run the Docker Registry with the ACLs provided and certificates,
 run the following command:
@@ -136,7 +138,7 @@ If you're using docker-compose, simply:
 docker-compose up -d
 ```
 
-### Test the Registry
+#### Test the Registry
 
 Now lets test our registry by logging into it using our admin
 user and password:
@@ -163,7 +165,7 @@ cat ~/.docker/config.json
 
 You will need to login in order to perform push/pull operations.
 
-## Push an Image
+### Push an Image
 
 At Continuul, our web site is actually deployed as a Docker image.
 We ourselves benefit from all the features of microservices, and in
@@ -211,9 +213,9 @@ docker images
 Verify you have the image installed. If you have, you're now ready
 to move onto integrating with Kubernetes.
 
-## Next
+### Next
 
-# Citations
+## Citations
 
 The following we articles proved helpful to me in learning
 about this:
