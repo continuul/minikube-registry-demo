@@ -23,14 +23,20 @@ that this information proves beneficial.
 
 ## Prerequisites
 
-At Continuul we do all testing within Linux VMs run on VMWare.
-If you're following along, the Docker Registry is run within
-a Docker VM, as is MiniKube.
+You must have Docker installed. All the following instructions
+were performed on Ubuntu, mileage may vary.
+
+## Recommendations
+
+At Continuul we do all testing within Linux VMs that run on
+VMWare. If you're following along, the Docker Registry is run
+within a Docker VM, as is MiniKube.
 
 It is left as an exercise to the reader if they so choose to
 use VirtualBox instead.
 
-We use, and highly recommend testing with VMWare instead.
+We recommend VMWare, the flexibility and usability is second to
+none.
 
 ## Security Options
 
